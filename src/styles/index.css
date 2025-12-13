@@ -36,6 +36,11 @@ h1, h2, h3, h4 {
   font-family: "HurmeGeometricSans4-Black";
 }
 
+p {
+  font-family: "HurmeGeometricSans4-Black";
+};
+
+
 @keyframes sweep {
   0% {
     transform: translateX(-100%);

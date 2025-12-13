@@ -33,10 +33,6 @@ export default {
         }, // ajusta al mostaza que quieras
         blanco: "#FFFFFF",
       },
-      // fontFamily: {
-      //   playfair: ["Playfair Display", "serif"],
-      //   poppins: ["Poppins", "sans-serif"],
-      // },
     },
   },
   plugins: [],
