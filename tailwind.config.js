@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        hurmeOblack: ["HurmeGeometricSans4-Black"],
-        hurmeOblique: ["HurmeGeometricSans4-BoldObl"],
+        hurmeOblack: ["HurmeBlack"],
+        hurmeOblique: ["HurmeOblique"],
       },
       colors: {
         azul: {

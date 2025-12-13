@@ -2,47 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =======================
+   FUENTES
+======================= */
+
 @font-face {
-  font-family: "HurmeGeometricSans4-Black";
-  src: url("/src/assets/fonts/HurmeGeometricSans4-Black.ttf") format("woff2");
+  font-family: "HurmeBlack";
+  src: url("../assets/fonts/HurmeGeometricSans4-Black.ttf")
+    format("truetype");
   font-weight: 900;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "HurmeGeometricSans4-BoldObl";
-  src: url("/src/assets/fonts/HurmeGeometricSans4-BoldObl.ttf ") format("truetype");
+  font-family: "HurmeOblique";
+  src: url("../assets/fonts/HurmeGeometricSans4-BoldObl.ttf")
+    format("truetype");
   font-weight: 700;
   font-style: oblique;
+  font-display: swap;
 }
+
+/* =======================
+   BASE
+======================= */
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: "HurmeGeometricSans4-BoldObl";
+  font-family: "HurmeOblique", sans-serif;
   background-color: #000000;
   color: #ffffff;
-  scroll-behavior: smooth;
 }
 
-titulo1{
-  font-family: "HurmeGeometricSans4-BoldObl";
+/* =======================
+   TIPOGRAFÍA
+======================= */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "HurmeBlack", sans-serif;
 }
 
-h1, h2, h3, h4 {
-  font-family: "HurmeGeometricSans4-Black";
+p,
+ul,
+li {
+  font-family: "HurmeOblique", sans-serif;
 }
 
-p {
-  font-family: "HurmeGeometricSans4-Black";
-};
-
-ul {
-   font-family: "HurmeGeometricSans4-Black";
-}
-
+/* =======================
+   ANIMACIONES
+======================= */
 
 @keyframes sweep {
   0% {
