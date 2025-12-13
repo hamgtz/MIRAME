@@ -17,6 +17,7 @@ export default {
         },
         // ajusta al azul que quieras
         mostaza: {
+          1000: "#002551",
           950: "#3B2A00",
           900: "#5C3E00",
           800: "#815700",

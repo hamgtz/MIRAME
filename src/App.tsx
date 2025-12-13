@@ -1,4 +1,5 @@
 // import { useState } from "react";
+import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Servicios from "./components/Servicios";
 import Galeria from "./components/Galeria";
@@ -11,6 +12,7 @@ import BotonWasa from "./components/BotonWasa";
 function App() {
   return (
     <>
+      <Navbar />
       <Hero />
       <Servicios />
       <Colaborador />

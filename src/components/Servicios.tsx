@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import FlipCard from "../components/FlipCard";
+import diseno from "../assets/image/flager_mirame.jpg";
 
 const fadeVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -15,7 +16,7 @@ function Servicios() {
       title: "Diseño Gráfico",
       desc: "Branding, logotipos, piezas publicitarias y más.",
       price: "Desde S/120",
-      img: "/src/assets/image/flager_mirame.jpg",
+      img: diseno,
     },
     {
       title: "Fotografía de Eventos",

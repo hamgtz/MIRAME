@@ -63,8 +63,8 @@ const Resena = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 5 }}
-          className="flex w-max animate-[scroll_100s_linear_infinite] group-hover:[animation-play-state:paused]"
+          transition={{ duration: 7 }}
+          className="flex w-max animate-[scroll_90s_linear_infinite] group-hover:[animation-play-state:paused]"
           style={{ willChange: "transform", transform: "translate3d(0, 0, 0)" }}
         >
           {Array(2)
