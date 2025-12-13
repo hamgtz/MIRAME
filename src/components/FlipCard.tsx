@@ -1,20 +1,32 @@
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import type { Dispatch, SetStateAction } from "react";
 
+/* ===== TIPOS ===== */
+type Servicio = {
+  title: string;
+  desc: string;
+  price: string;
+  img?: string;
+};
+
+type FlipCardProps = {
+  item: Servicio;
+  index: number;
+  flippedIndex: number | null;
+  setFlippedIndex: Dispatch<SetStateAction<number | null>>;
+};
+
+/* ===== COMPONENTE ===== */
 export default function FlipCard({
   item,
   index,
   flippedIndex,
   setFlippedIndex,
-}) {
+}: FlipCardProps) {
   const isFlipped = flippedIndex === index;
 
   const handleClick = () => {
-    if (isFlipped) {
-      setFlippedIndex(null); // si la misma carta se toca, se cierra
-    } else {
-      setFlippedIndex(index); // abrir esta carta y cerrar las demás
-    }
+    setFlippedIndex(isFlipped ? null : index);
   };
 
   return (
@@ -33,32 +45,37 @@ export default function FlipCard({
         transition={{ duration: 0.6, ease: "easeInOut" }}
         style={{ transformStyle: "preserve-3d" }}
       >
-        {/* FRONT */}
+        {/* ===== FRENTE ===== */}
         <div
           className="absolute inset-0 p-6 flex flex-col items-center justify-center"
           style={{ backfaceVisibility: "hidden" }}
         >
-          <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-mostaza-5 transition-colors duration-300">
+          <h3 className="text-2xl font-bold mb-4 text-white transition-colors duration-300">
             {item.title}
           </h3>
-          <p className="text-lg text-white/70 mb-6 leading-relaxed">
+          <p className="text-lg text-white/70 mb-6 leading-relaxed text-center">
             {item.desc}
           </p>
           <p className="text-xl text-mostaza-5 mb-4">{item.price}</p>
-          <div className="w-12 h-1 mx-auto bg-mostaza-5 rounded-full mb-2"></div>
+          <div className="w-12 h-1 mx-auto bg-mostaza-5 rounded-full mb-2" />
         </div>
 
-        {/* --- */}
+        {/* ===== ATRÁS ===== */}
         <div
           className="absolute inset-0 flex items-center justify-center"
-          style={{ transform: "rotateY(180deg)", backfaceVisibility: "hidden" }}
+          style={{
+            transform: "rotateY(180deg)",
+            backfaceVisibility: "hidden",
+          }}
         >
-          <div className="w-[99%] h-[99%] bg-black rounded-3xl p-2 shadow-xl border border-mostaza-5/70">
-            <img
-              src={item.img}
-              className="w-full h-full object-cover rounded-xl shadow-lg"
-              alt={item.title}
-            />
+          <div className="w-[96%] h-[96%] bg-black/40 backdrop-blur-md rounded-3xl p-2 shadow-xl border border-mostaza-5/60">
+            {item.img && (
+              <img
+                src={item.img}
+                alt={item.title}
+                className="w-full h-full object-cover rounded-xl shadow-lg"
+              />
+            )}
           </div>
         </div>
       </motion.div>

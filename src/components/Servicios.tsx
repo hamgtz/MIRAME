@@ -8,7 +8,7 @@ const fadeVariants = {
 };
 
 function Servicios() {
-  const [flippedIndex, setFlippedIndex] = useState(null);
+  const [flippedIndex, setFlippedIndex] = useState<number | null>(null);
 
   const servicios = [
     {
