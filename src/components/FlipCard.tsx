@@ -1,27 +1,34 @@
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+
+type Servicio = {
+  title: string;
+  desc: string;
+  price: string;
+  img?: string;
+};
+
+type FlipCardProps = {
+  item: Servicio;
+  index: number;
+  flippedIndex: number | null;
+  setFlippedIndex: React.Dispatch<React.SetStateAction<number | null>>;
+};
 
 export default function FlipCard({
   item,
   index,
   flippedIndex,
   setFlippedIndex,
-}) {
+}: FlipCardProps) {
   const isFlipped = flippedIndex === index;
-
-  const handleClick = () => {
-    if (isFlipped) {
-      setFlippedIndex(null); // si la misma carta se toca, se cierra
-    } else {
-      setFlippedIndex(index); // abrir esta carta y cerrar las demás
-    }
-  };
 
   return (
     <motion.div
       className="relative w-72 h-80 cursor-pointer"
       style={{ perspective: 1000 }}
-      onClick={handleClick}
+      onClick={() =>
+        setFlippedIndex(isFlipped ? null : index)
+      }
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -30,38 +37,44 @@ export default function FlipCard({
       <motion.div
         className="absolute inset-0 rounded-3xl shadow-xl bg-[#1f2937] border border-white/10"
         animate={{ rotateY: isFlipped ? 180 : 0 }}
-        transition={{ duration: 0.6, ease: "easeInOut" }}
+        transition={{ duration: 0.7 }}
         style={{ transformStyle: "preserve-3d" }}
       >
-        {/* FRONT */}
+        {/* Frente */}
         <div
           className="absolute inset-0 p-6 flex flex-col items-center justify-center"
           style={{ backfaceVisibility: "hidden" }}
         >
-          <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-mostaza-5 transition-colors duration-300">
+          <h3 className="text-2xl font-bold mb-4 text-white">
             {item.title}
           </h3>
-          <p className="text-lg text-white/70 mb-6 leading-relaxed">
+          <p className="text-lg text-white/70 mb-6">
             {item.desc}
           </p>
-          <p className="text-xl text-mostaza-5 mb-4">{item.price}</p>
-          <div className="w-12 h-1 mx-auto bg-mostaza-5 rounded-full mb-2"></div>
+          <p className="text-xl text-mostaza-5">
+            {item.price}
+          </p>
+          <div className="w-12 h-1 mx-auto bg-mostaza-5 rounded-full mt-4" />
         </div>
 
-        {/* --- */}
+        {/* Atrás */}
         <div
-          className="absolute inset-0 flex items-center justify-center"
-          style={{ transform: "rotateY(180deg)", backfaceVisibility: "hidden" }}
+          className="absolute inset-0 rounded-3xl overflow-hidden"
+          style={{
+            transform: "rotateY(180deg)",
+            backfaceVisibility: "hidden",
+          }}
         >
-          <div className="w-[99%] h-[99%] bg-black rounded-3xl p-2 shadow-xl border border-mostaza-5/70">
+          {item.img && (
             <img
               src={item.img}
-              className="w-full h-full object-cover rounded-xl shadow-lg"
               alt={item.title}
+              className="w-full h-full object-cover"
             />
-          </div>
+          )}
         </div>
       </motion.div>
     </motion.div>
   );
 }
+
