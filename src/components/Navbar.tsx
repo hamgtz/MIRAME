@@ -16,7 +16,7 @@ export default function Navbar() {
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top- left-0 w-full z-50 bg-mostaza-5 shadow-lg"
+      className="fixed top- left-0 w-full z-50 bg-mostaza-5 shadow-lg HurmeGeometricSans4-Black"
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* LOGO */}
