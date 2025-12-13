@@ -42,7 +42,7 @@ export default function FlipCard({
       <motion.div
         className="absolute inset-0 rounded-3xl shadow-xl bg-[#1f2937] border border-white/10"
         animate={{ rotateY: isFlipped ? 180 : 0 }}
-        transition={{ duration: 0.6, ease: "easeInOut" }}
+        transition={{ duration: 0.7 }}
         style={{ transformStyle: "preserve-3d" }}
       >
         {/* ===== FRENTE ===== */}
