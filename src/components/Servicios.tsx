@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import { useState } from "react";
 import FlipCard from "../components/FlipCard";
 
 const fadeVariants = {
@@ -8,7 +8,7 @@ const fadeVariants = {
 };
 
 function Servicios() {
-  const [flippedIndex, setFlippedIndex] = useState(null);
+  const [flippedIndex, setFlippedIndex] = useState<number | null>(null);
 
   const servicios = [
     {
