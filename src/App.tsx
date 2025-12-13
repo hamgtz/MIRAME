@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import Hero from "./components/Hero";
 import Servicios from "./components/Servicios";
 import Galeria from "./components/Galeria";
