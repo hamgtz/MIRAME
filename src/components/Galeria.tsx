@@ -1,8 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Autoplay, Navigation } from "swiper/modules";
-// import "swiper/css";
-// import "swiper/css/effect-coverflow";
-// import "swiper/css/navigation";
+import "swiper/swiper-bundle.css";
+
 import { motion } from "framer-motion";
 
 import uno from "../assets/image/DSC06497-Mejorado-NR.jpg";
