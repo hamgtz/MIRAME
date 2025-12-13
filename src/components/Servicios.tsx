@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+
 import FlipCard from "../components/FlipCard";
 
 const fadeVariants = {
