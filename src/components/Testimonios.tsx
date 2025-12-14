@@ -27,7 +27,10 @@ function Testimonios() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-white via-[#f8f8fa] to-white">
+    <section
+      id="testimonio"
+      className="py-16 md:py-24 bg-gradient-to-b from-white via-[#f8f8fa] to-white"
+    >
       {/* CONTENEDOR CENTRAL */}
       <div className="w-[95%] max-w-7xl mx-auto px-6 text-center">
         {/* TÍTULO */}

@@ -1,4 +1,4 @@
-import { FaInstagram, FaFacebookF, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaFacebookF, FaWhatsapp, FaTiktok } from "react-icons/fa";
 
 function Footer() {
   return (
@@ -50,6 +50,14 @@ function Footer() {
             className="text-gray-400 hover:text-green-500 transition-colors text-xl"
           >
             <FaWhatsapp />
+          </a>
+          <a
+            href="https://www.tiktok.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-black transition-colors text-xl"
+          >
+            <FaTiktok />
           </a>
         </div>
       </div>
