@@ -46,6 +46,7 @@ function Servicios() {
 
   return (
     <motion.section
+      id="servicios"
       className="py-24 bg-gradient-to-b from-black via-[#111827] to-black text-white"
       variants={fadeVariants}
       initial="hidden"

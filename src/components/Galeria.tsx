@@ -28,7 +28,10 @@ function Galeria() {
   const imagenes = [uno, dos, tres, cuatro, cinco, seis, siete, nueve];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-[#111827] via-[#1f2937] to-[#111827] relative overflow-hidden">
+    <section
+      id="galeria"
+      className="py-24 bg-gradient-to-b from-[#111827] via-[#1f2937] to-[#111827] relative overflow-hidden"
+    >
       {/* CONTENEDOR CENTRAL */}
       <div className="w-[95%] max-w-7xl mx-auto px-6 text-center">
         {/* TÍTULO */}

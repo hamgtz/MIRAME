@@ -22,7 +22,10 @@ function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen bg-black text-white overflow-hidden flex items-center py-24">
+    <section
+      id="inicio"
+      className="relative min-h-screen bg-black text-white overflow-hidden flex items-center py-24"
+    >
       {/* VIDEO FONDO */}
       <motion.video
         autoPlay

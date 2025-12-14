@@ -32,7 +32,7 @@ function BotonWasa() {
   return (
     // 🔘 BOTÓN FLOTANTE DE WHATSAPP
     <motion.a
-      href="https://wa.me/51999999999"
+      href="https://wa.me/51904536986"
       target="_blank"
       rel="noopener noreferrer"
       // Aparece/desaparece suavemente con escala y opacidad

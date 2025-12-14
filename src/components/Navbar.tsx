@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
 import Logo from "../assets/image/logoMirame.png";
 
@@ -11,35 +11,42 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setScrolled(latest > 80); // apenas bajas un poco
+  });
 
   return (
     <motion.nav
-      initial={{ y: -40, opacity: 0 }}
+      initial={{ y: -30, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className="
-        fixed top-4 inset-x-0 z-50
+        fixed top-3 inset-x-0 z-50
         flex justify-center
         pointer-events-none
       "
     >
-      {/* CONTENEDOR REAL */}
-      <div
-        className="
-          pointer-events-auto
-          w-full max-w-7xl mx-auto
-          px-4
-        "
-      >
-        <div
+      {/* CONTENEDOR */}
+      <div className="pointer-events-auto w-full max-w-7xl mx-auto px-4">
+        <motion.div
+          animate={{
+            backgroundColor: scrolled
+              ? "rgba(0,0,0,0.35)" // más transparente al bajar
+              : "rgba(255, 179, 0, 0.9)", // mostaza arriba
+            backdropFilter: scrolled ? "blur(10px)" : "blur(16px)",
+          }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           className="
-            bg-mostaza-5/90 backdrop-blur-lg
             rounded-full shadow-xl
             flex items-center justify-between
             px-6 py-4
           "
         >
-          {/* LOGO + TEXTO */}
+          {/* LOGO */}
           <div className="flex items-center gap-3">
             <img
               src={Logo}
@@ -47,7 +54,7 @@ export default function Navbar() {
               className="w-9 h-9 object-contain"
             />
             <h1 className="text-xl md:text-2xl tracking-widest text-white font-hurmeBlack">
-              MIRAME
+              MÍRAME
             </h1>
           </div>
 
@@ -77,7 +84,7 @@ export default function Navbar() {
           >
             ☰
           </button>
-        </div>
+        </motion.div>
 
         {/* MENU MOBILE */}
         {open && (
@@ -86,9 +93,8 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             transition={{ duration: 0.4 }}
             className="
-              mt-4 bg-mostaza-5/90 backdrop-blur-lg
-              rounded-3xl px-6 pb-6
-              md:hidden
+              mt-4 bg-black/40 backdrop-blur-xl
+              rounded-3xl px-6 pb-6 md:hidden
             "
           >
             <ul className="flex flex-col gap-4 text-white text-lg font-hurmeOblique">
