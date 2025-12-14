@@ -84,7 +84,7 @@ const Resena = () => {
                  w-36 sm:w-44 md:w-52
                  mx-2 sm:mx-4 md:mx-6
                  hover:scale-105 transition-transform duration-300
-"
+              "
             >
               <div className="bg-white p-3 rounded-xl shadow-md border border-neutral-300 flex items-center justify-center">
                 <img

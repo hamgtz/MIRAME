@@ -44,13 +44,14 @@ function Footer() {
           </a>
 
           <a
-            href="https://wa.me/51999999999"
+            href="https://wa.me/51904536986"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-green-500 transition-colors text-xl"
           >
             <FaWhatsapp />
           </a>
+
           <a
             href="https://www.tiktok.com/"
             target="_blank"
