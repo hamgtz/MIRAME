@@ -46,27 +46,32 @@ function Servicios() {
 
   return (
     <motion.section
-      className="py-24 px-6 bg-gradient-to-b from-black via-[#111827] to-black text-white text-center"
+      className="py-24 bg-gradient-to-b from-black via-[#111827] to-black text-white"
       variants={fadeVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 1 }}
     >
-      <h2 className="text-4xl md:text-5xl font-bold mb-16 text-mostaza-5">
-        Nuestros Servicios
-      </h2>
+      {/* CONTENEDOR CENTRAL */}
+      <div className="w-[95%] max-w-7xl mx-auto px-6 text-center">
+        {/* TÍTULO */}
+        <h2 className="text-4xl md:text-5xl font-hurmeBlack mb-16 text-mostaza-5">
+          Nuestros Servicios
+        </h2>
 
-      <div className="flex flex-wrap justify-center gap-10">
-        {servicios.map((item, index) => (
-          <FlipCard
-            key={index}
-            item={item}
-            index={index}
-            flippedIndex={flippedIndex}
-            setFlippedIndex={setFlippedIndex}
-          />
-        ))}
+        {/* CARDS */}
+        <div className="flex flex-wrap justify-center gap-10">
+          {servicios.map((item, index) => (
+            <FlipCard
+              key={index}
+              item={item}
+              index={index}
+              flippedIndex={flippedIndex}
+              setFlippedIndex={setFlippedIndex}
+            />
+          ))}
+        </div>
       </div>
     </motion.section>
   );

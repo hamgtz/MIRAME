@@ -4,16 +4,21 @@ function Footer() {
   return (
     <footer
       id="footer"
-      className="py-10 px-6 bg-neutral-900 text-gray-300 border-t border-neutral-700"
+      className="py-12 bg-neutral-900 text-gray-300 border-t border-neutral-700"
     >
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      {/* CONTENEDOR CENTRAL */}
+      <div
+        className="w-[95%] max-w-7xl mx-auto px-6 
+                      flex flex-col md:flex-row 
+                      items-center justify-between gap-6 text-center md:text-left"
+      >
         {/* Nombre */}
-        <p className="text-lg tracking-wide text-mostaza-5">
+        <p className="text-lg tracking-wide text-mostaza-5 font-hurmeBlack">
           MÍRAME &copy; {new Date().getFullYear()}
         </p>
 
         {/* Derechos */}
-        <p className="text-sm text-center md:text-left text-blue-100">
+        <p className="text-sm text-blue-100 max-w-md">
           Diseño Gráfico & Fotografía Profesional — Todos los derechos
           reservados.
         </p>
@@ -28,6 +33,7 @@ function Footer() {
           >
             <FaInstagram />
           </a>
+
           <a
             href="https://web.facebook.com/mirameagenciadepublicidad"
             target="_blank"
@@ -36,6 +42,7 @@ function Footer() {
           >
             <FaFacebookF />
           </a>
+
           <a
             href="https://wa.me/51999999999"
             target="_blank"
