@@ -25,7 +25,10 @@ function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center bg-black text-white px-8 py-24 overflow-hidden">
+    <section
+      id="inicio"
+      className="relative min-h-screen flex items-center bg-black text-white px-8 py-24 overflow-hidden"
+    >
       {/* IMAGEN DE FONDO */}
       <motion.video
         autoPlay
@@ -63,9 +66,9 @@ function Hero() {
             transition={{ delay: 0.8, duration: 1 }}
           /> */}
 
-          <h1 className="text-[3rem] md:text-[4.5rem] uppercase tracking-[0.12em] mb-6 leading-tight text-mostaza-5">
+          {/* <h1 className="text-[3rem] md:text-[4.5rem] uppercase tracking-[0.12em] mb-6 leading-tight text-mostaza-5">
             MÍRAME
-          </h1>
+          </h1> */}
 
           <p className="text-lg md:text-xl text-white/85 mb-8 max-w-lg mx-auto md:mx-0">
             La fotografía que cuenta tu historia con elegancia y pasión.

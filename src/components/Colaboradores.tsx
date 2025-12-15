@@ -14,6 +14,7 @@ import logoCliente10 from "../assets/image/Logos/logos pagina-10.png";
 import logoCliente11 from "../assets/image/Logos/logos pagina-11.png";
 import logoCliente12 from "../assets/image/Logos/loog atahualpa.png";
 import logoCliente13 from "../assets/image/Logos/perfil goku.png";
+import LogoMuni from "../assets/image/Logos/LOGO MUNI.png";
 
 const imagenes = [
   { src: logoCliente1, nombre: "" },
@@ -29,6 +30,7 @@ const imagenes = [
   { src: logoCliente11, nombre: "" },
   { src: logoCliente12, nombre: "" },
   { src: logoCliente13, nombre: "" },
+  { src: LogoMuni, nombre: "" },
 ];
 
 const Resena = () => {
