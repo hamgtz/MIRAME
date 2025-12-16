@@ -90,9 +90,9 @@ function Galeria() {
     max-w-[360px]
     max-h-[480px]
     rounded-3xl
-    overflow-hidden
+    overflow-clip
     shadow-xl
-    transition-transform
+    transition-colors
     duration-500
     hover:scale-[1.03]
   "
@@ -110,8 +110,7 @@ function Galeria() {
       h-full
       object-cover
       scale-110
-      blur-2xl
-      opacity-50
+     
     "
               />
 
@@ -126,10 +125,7 @@ function Galeria() {
       h-full
       object-contain
       lg:object-cover
-      bg-gradient-to-b
-      from-[#FFB300]/20
-      via-black
-      to-black
+      
     "
               />
 
